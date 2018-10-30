@@ -1,0 +1,305 @@
+class StringTest
+    Minor version: 0
+    Major version: 52
+    Flags: PUBLIC, SUPER
+    
+    private static final int LOOP_TIMES;
+        Flags: PRIVATE, STATIC, FINAL
+        ConstantValue: int 10000
+    
+    private static final int SUB_LOOP_TIMES;
+        Flags: PRIVATE, STATIC, FINAL
+        ConstantValue: int 50
+    
+    private static final java.lang.String a;
+        Flags: PRIVATE, STATIC, FINAL
+        ConstantValue: java.lang.String "1"
+    
+    private static final java.lang.String b;
+        Flags: PRIVATE, STATIC, FINAL
+        ConstantValue: java.lang.String "2"
+    
+    public void <init>();
+        Flags: PUBLIC
+        Code:
+                  linenumber      2
+               0: aload_0         /* this */
+               1: invokespecial   java/lang/Object.<init>:()V
+               4: return         
+    
+    private static void stringBuilderTest001();
+        Flags: PRIVATE, STATIC
+        Code:
+                  linenumber      11
+               0: invokestatic    java/lang/System.currentTimeMillis:()J
+               3: lstore_0        /* begin */
+                  linenumber      13
+               4: new             Ljava/lang/StringBuilder;
+               7: dup            
+               8: ldc             ""
+              10: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              13: astore_2        /* sb */
+                  linenumber      15
+              14: iconst_0       
+              15: istore_3        /* i */
+              16: goto            45
+                  linenumber      16
+              19: iconst_0       
+              20: istore          j
+              22: goto            35
+                  linenumber      17
+              25: aload_2         /* sb */
+              26: iload           j
+              28: invokevirtual   java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+              31: pop            
+                  linenumber      16
+              32: iinc            j, 1
+              35: iload           j
+              37: bipush          50
+              39: if_icmplt       25
+                  linenumber      15
+              42: iinc            i, 1
+              45: iload_3         /* i */
+              46: sipush          10000
+              49: if_icmplt       19
+                  linenumber      21
+              52: invokestatic    java/lang/System.currentTimeMillis:()J
+              55: lstore_3        /* end */
+                  linenumber      23
+              56: getstatic       java/lang/System.out:Ljava/io/PrintStream;
+              59: new             Ljava/lang/StringBuilder;
+              62: dup            
+              63: ldc             "stringBuilderTest001 consume is "
+              65: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              68: lload_3         /* end */
+              69: lload_0         /* begin */
+              70: lsub           
+              71: invokevirtual   java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+              74: ldc             "ms"
+              76: invokevirtual   java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+              79: invokevirtual   java/lang/StringBuilder.toString:()Ljava/lang/String;
+              82: invokevirtual   java/io/PrintStream.println:(Ljava/lang/String;)V
+                  linenumber      24
+              85: return         
+        StackMapTable: 00 04 FE 00 13 04 07 00 22 01 FC 00 05 01 09 FA 00 09
+    
+    private static void stringBuilderTest002();
+        Flags: PRIVATE, STATIC
+        Code:
+                  linenumber      27
+               0: invokestatic    java/lang/System.currentTimeMillis:()J
+               3: lstore_0        /* begin */
+                  linenumber      29
+               4: iconst_0       
+               5: istore_2        /* i */
+               6: goto            62
+                  linenumber      30
+               9: new             Ljava/lang/StringBuilder;
+              12: dup            
+              13: ldc             ""
+              15: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              18: astore_3        /* stringBuilder */
+                  linenumber      31
+              19: iconst_0       
+              20: istore          j
+              22: goto            52
+                  linenumber      32
+              25: new             Ljava/lang/StringBuilder;
+              28: dup            
+              29: aload_3         /* stringBuilder */
+              30: invokevirtual   java/lang/StringBuilder.toString:()Ljava/lang/String;
+              33: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              36: astore          tmpStringBuilder
+                  linenumber      33
+              38: aload           tmpStringBuilder
+              40: iload           j
+              42: invokevirtual   java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+              45: pop            
+                  linenumber      34
+              46: aload           tmpStringBuilder
+              48: astore_3        /* stringBuilder */
+                  linenumber      31
+              49: iinc            j, 1
+              52: iload           j
+              54: bipush          50
+              56: if_icmplt       25
+                  linenumber      29
+              59: iinc            i, 1
+              62: iload_2         /* i */
+              63: sipush          10000
+              66: if_icmplt       9
+                  linenumber      38
+              69: invokestatic    java/lang/System.currentTimeMillis:()J
+              72: lstore_2        /* end */
+                  linenumber      40
+              73: getstatic       java/lang/System.out:Ljava/io/PrintStream;
+              76: new             Ljava/lang/StringBuilder;
+              79: dup            
+              80: ldc             "stringBuilderTest002 consume is "
+              82: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              85: lload_2         /* end */
+              86: lload_0         /* begin */
+              87: lsub           
+              88: invokevirtual   java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+              91: ldc             "ms"
+              93: invokevirtual   java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+              96: invokevirtual   java/lang/StringBuilder.toString:()Ljava/lang/String;
+              99: invokevirtual   java/io/PrintStream.println:(Ljava/lang/String;)V
+                  linenumber      41
+             102: return         
+        StackMapTable: 00 04 FD 00 09 04 01 FD 00 0F 07 00 22 01 1A F9 00 09
+    
+    private static void stringBuilderTest003();
+        Flags: PRIVATE, STATIC
+        Code:
+                  linenumber      44
+               0: invokestatic    java/lang/System.currentTimeMillis:()J
+               3: lstore_0        /* begin */
+                  linenumber      46
+               4: new             Ljava/lang/StringBuilder;
+               7: dup            
+               8: ldc             ""
+              10: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              13: astore_2        /* stringBuilder */
+                  linenumber      47
+              14: iconst_0       
+              15: istore_3        /* i */
+              16: goto            62
+                  linenumber      48
+              19: iconst_0       
+              20: istore          j
+              22: goto            52
+                  linenumber      49
+              25: new             Ljava/lang/StringBuilder;
+              28: dup            
+              29: aload_2         /* stringBuilder */
+              30: invokevirtual   java/lang/StringBuilder.toString:()Ljava/lang/String;
+              33: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              36: astore          tmpStringBuilder
+                  linenumber      50
+              38: aload           tmpStringBuilder
+              40: iload           j
+              42: invokevirtual   java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+              45: pop            
+                  linenumber      51
+              46: aload           tmpStringBuilder
+              48: astore_2        /* stringBuilder */
+                  linenumber      48
+              49: iinc            j, 1
+              52: iload           j
+              54: bipush          50
+              56: if_icmplt       25
+                  linenumber      47
+              59: iinc            i, 1
+              62: iload_3         /* i */
+              63: sipush          10000
+              66: if_icmplt       19
+                  linenumber      55
+              69: invokestatic    java/lang/System.currentTimeMillis:()J
+              72: lstore_3        /* end */
+                  linenumber      57
+              73: getstatic       java/lang/System.out:Ljava/io/PrintStream;
+              76: new             Ljava/lang/StringBuilder;
+              79: dup            
+              80: ldc             "stringBuilderTest003 consume is "
+              82: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              85: lload_3         /* end */
+              86: lload_0         /* begin */
+              87: lsub           
+              88: invokevirtual   java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+              91: ldc             "ms"
+              93: invokevirtual   java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+              96: invokevirtual   java/lang/StringBuilder.toString:()Ljava/lang/String;
+              99: invokevirtual   java/io/PrintStream.println:(Ljava/lang/String;)V
+                  linenumber      58
+             102: return         
+        StackMapTable: 00 04 FE 00 13 04 07 00 22 01 FC 00 05 01 1A FA 00 09
+    
+    private static void plusTest001();
+        Flags: PRIVATE, STATIC
+        Code:
+                  linenumber      61
+               0: invokestatic    java/lang/System.currentTimeMillis:()J
+               3: lstore_0        /* begin */
+                  linenumber      63
+               4: ldc             ""
+               6: astore_2        /* str */
+                  linenumber      64
+               7: iconst_0       
+               8: istore_3        /* i */
+               9: goto            51
+                  linenumber      65
+              12: iconst_0       
+              13: istore          j
+              15: goto            41
+                  linenumber      66
+              18: new             Ljava/lang/StringBuilder;
+              21: dup            
+              22: aload_2         /* str */
+              23: invokestatic    java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+              26: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              29: iload           j
+              31: invokevirtual   java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+              34: invokevirtual   java/lang/StringBuilder.toString:()Ljava/lang/String;
+              37: astore_2        /* str */
+                  linenumber      65
+              38: iinc            j, 1
+              41: iload           j
+              43: bipush          50
+              45: if_icmplt       18
+                  linenumber      64
+              48: iinc            i, 1
+              51: iload_3         /* i */
+              52: sipush          10000
+              55: if_icmplt       12
+                  linenumber      70
+              58: getstatic       java/lang/System.out:Ljava/io/PrintStream;
+              61: aload_2         /* str */
+              62: invokevirtual   java/lang/String.length:()I
+              65: invokevirtual   java/io/PrintStream.println:(I)V
+                  linenumber      72
+              68: invokestatic    java/lang/System.currentTimeMillis:()J
+              71: lstore_3        /* end */
+                  linenumber      74
+              72: getstatic       java/lang/System.out:Ljava/io/PrintStream;
+              75: new             Ljava/lang/StringBuilder;
+              78: dup            
+              79: ldc             "plusTest001 consume is "
+              81: invokespecial   java/lang/StringBuilder.<init>:(Ljava/lang/String;)V
+              84: lload_3         /* end */
+              85: lload_0         /* begin */
+              86: lsub           
+              87: invokevirtual   java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+              90: ldc             "ms"
+              92: invokevirtual   java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+              95: invokevirtual   java/lang/StringBuilder.toString:()Ljava/lang/String;
+              98: invokevirtual   java/io/PrintStream.println:(Ljava/lang/String;)V
+                  linenumber      75
+             101: return         
+        StackMapTable: 00 04 FE 00 0C 04 07 00 56 01 FC 00 05 01 16 FA 00 09
+    
+    public static void main(java.lang.String[] args);
+        Flags: PUBLIC, STATIC
+        Code:
+                  linenumber      78
+               0: getstatic       java/lang/System.out:Ljava/io/PrintStream;
+               3: ldc             "begin"
+               5: invokevirtual   java/io/PrintStream.println:(Ljava/lang/String;)V
+                  linenumber      80
+               8: invokestatic    StringTest.stringBuilderTest001:()V
+                  linenumber      81
+              11: invokestatic    StringTest.stringBuilderTest002:()V
+                  linenumber      82
+              14: invokestatic    StringTest.stringBuilderTest003:()V
+                  linenumber      84
+              17: invokestatic    StringTest.plusTest001:()V
+                  linenumber      86
+              20: getstatic       java/lang/System.out:Ljava/io/PrintStream;
+              23: ldc             "1 2"
+              25: invokevirtual   java/io/PrintStream.println:(Ljava/lang/String;)V
+                  linenumber      88
+              28: getstatic       java/lang/System.out:Ljava/io/PrintStream;
+              31: ldc             "end"
+              33: invokevirtual   java/io/PrintStream.println:(Ljava/lang/String;)V
+                  linenumber      89
+              36: return         
